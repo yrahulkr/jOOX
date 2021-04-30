@@ -84,7 +84,7 @@ public final class CSS2XPath {
                 // [#163] To stay on the safe side, we need namespace unaware XPath expressions here
                 //        Do this only for actual tag names, not e.g. * or other special characters
                 if (SIMPLE_SELECTOR.matcher(s.getTagName()).matches())
-                    sb.append("*[local-name() = '").append(s.getTagName()).append("']");
+                    sb.append("*[local-name() = '").append(s.getTagName().toUpperCase()).append("']");
                 else
                     sb.append(s.getTagName());
 
